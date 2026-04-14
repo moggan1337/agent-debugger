@@ -1,0 +1,52 @@
+{
+  "name": "agent-debugger",
+  "version": "1.0.0",
+  "description": "Visual debugging for AI agents - Like Chrome DevTools, but for AI agents",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/debugger.js",
+  "types": "./dist/debugger.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/server.js",
+    "test": "node --test dist/**/*.test.js",
+    "lint": "eslint src/**/*.ts"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "debugger",
+    "devtools",
+    "tracing",
+    "monitoring",
+    "debugging",
+    "visualization"
+  ],
+  "author": "moggan1337",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moggan1337/agent-debugger"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/debugger.js",
+      "types": "./dist/debugger.d.ts"
+    },
+    "./core": {
+      "import": "./dist/core/*.js",
+      "types": "./dist/core/*.d.ts"
+    },
+    "./ui": {
+      "import": "./dist/ui/*.js",
+      "types": "./dist/ui/*.d.ts"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
