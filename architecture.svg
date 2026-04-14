@@ -1,157 +1,121 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a"/>
-      <stop offset="100%" stop-color="#1e293b"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#12121a"/>
     </linearGradient>
-    
-    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="primary" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#06b6d4"/>
       <stop offset="100%" stop-color="#3b82f6"/>
     </linearGradient>
-    
-    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#10b981"/>
       <stop offset="100%" stop-color="#06b6d4"/>
     </linearGradient>
-    
-    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#a855f7"/>
-      <stop offset="100%" stop-color="#6366f1"/>
-    </linearGradient>
-    
-    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="orange" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#f59e0b"/>
       <stop offset="100%" stop-color="#ef4444"/>
     </linearGradient>
-    
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
   
-  <!-- Background -->
-  <rect width="800" height="600" fill="url(#bgGrad)"/>
+  <rect width="800" height="500" fill="url(#bg)"/>
   
   <!-- Title -->
-  <text x="400" y="40" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Agent Debugger Architecture</text>
+  <text x="400" y="40" text-anchor="middle" fill="#e2e8f0" font-family="system-ui" font-size="20" font-weight="600">Architecture</text>
   
   <!-- Central Inspector -->
-  <rect x="300" y="200" width="200" height="120" rx="15" fill="#0f172a" stroke="url(#primaryGrad)" stroke-width="3" filter="url(#glow)"/>
-  <text x="400" y="240" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Inspector</text>
-  <text x="400" y="265" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="11">Unified Debug Interface</text>
+  <rect x="300" y="200" width="200" height="100" rx="12" fill="#1a1a2e" stroke="url(#primary)" stroke-width="2"/>
+  <text x="400" y="235" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="18" font-weight="600">Inspector</text>
+  <text x="400" y="258" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="11">Unified Debug Interface</text>
   
-  <!-- Connection lines to inspector -->
-  <path d="M300 260 L200 260" stroke="url(#primaryGrad)" stroke-width="2"/>
-  <path d="M500 260 L600 260" stroke="url(#primaryGrad)" stroke-width="2"/>
-  <path d="M400 200 L400 100" stroke="url(#primaryGrad)" stroke-width="2"/>
-  <path d="M400 320 L400 420" stroke="url(#primaryGrad)" stroke-width="2"/>
+  <!-- Connection lines -->
+  <line x1="300" y1="250" x2="180" y2="250" stroke="url(#purple)" stroke-width="2"/>
+  <line x1="500" y1="250" x2="620" y2="250" stroke="url(#orange)" stroke-width="2"/>
+  <line x1="400" y1="200" x2="400" y2="100" stroke="url(#green)" stroke-width="2"/>
+  <line x1="400" y1="300" x2="400" y2="400" stroke="url(#primary)" stroke-width="2"/>
   
-  <!-- Reasoning Tracer (Left) -->
-  <rect x="80" y="200" width="140" height="120" rx="10" fill="#1e293b" stroke="url(#purpleGrad)" stroke-width="2"/>
-  <text x="150" y="230" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🧠 Tracer</text>
-  <text x="150" y="250" text-anchor="middle" fill="#a855f7" font-family="Arial, sans-serif" font-size="10">Reasoning Trace</text>
+  <!-- Tracer (Left) -->
+  <rect x="60" y="200" width="130" height="100" rx="10" fill="#1a1a2e" stroke="url(#purple)" stroke-width="2"/>
+  <text x="125" y="230" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="500">🧠 Tracer</text>
   
-  <!-- Trace items -->
-  <rect x="90" y="265" width="120" height="8" rx="4" fill="#1e293b"/>
-  <rect x="90" y="265" width="80" height="8" rx="4" fill="url(#purpleGrad)" opacity="0.8"/>
+  <rect x="75" y="245" width="100" height="6" rx="3" fill="#1e293b"/>
+  <rect x="75" y="245" width="70" height="6" rx="3" fill="url(#purple)" opacity="0.7"/>
   
-  <rect x="90" y="280" width="120" height="8" rx="4" fill="#1e293b"/>
-  <rect x="90" y="280" width="100" height="8" rx="4" fill="url(#purpleGrad)" opacity="0.6"/>
+  <rect x="75" y="258" width="100" height="6" rx="3" fill="#1e293b"/>
+  <rect x="75" y="258" width="50" height="6" rx="3" fill="url(#purple)" opacity="0.5"/>
   
-  <rect x="90" y="295" width="120" height="8" rx="4" fill="#1e293b"/>
-  <rect x="90" y="295" width="60" height="8" rx="4" fill="url(#purpleGrad)" opacity="0.4"/>
+  <rect x="75" y="271" width="100" height="6" rx="3" fill="#1e293b"/>
+  <rect x="75" y="271" width="85" height="6" rx="3" fill="url(#purple)" opacity="0.3"/>
   
   <!-- Memory Viewer (Top) -->
-  <rect x="300" y="60" width="200" height="100" rx="10" fill="#1e293b" stroke="url(#greenGrad)" stroke-width="2"/>
-  <text x="400" y="90" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">📊 Memory</text>
-  <text x="400" y="110" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="10">Memory Viewer</text>
+  <rect x="300" y="60" width="200" height="90" rx="10" fill="#1a1a2e" stroke="url(#green)" stroke-width="2"/>
+  <text x="400" y="90" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="500">📊 Memory</text>
   
-  <!-- Memory bars -->
-  <text x="315" y="130" fill="#64748b" font-family="Arial, sans-serif" font-size="9">Short</text>
-  <rect x="360" y="124" width="130" height="10" rx="5" fill="#1e293b"/>
-  <rect x="360" y="124" width="90" height="10" rx="5" fill="url(#greenGrad)"/>
+  <text x="320" y="115" fill="#64748b" font-family="system-ui" font-size="9">Short</text>
+  <rect x="360" y="108" width="130" height="8" rx="4" fill="#1e293b"/>
+  <rect x="360" y="108" width="80" height="8" rx="4" fill="url(#green)"/>
   
-  <text x="315" y="148" fill="#64748b" font-family="Arial, sans-serif" font-size="9">Long</text>
-  <rect x="360" y="142" width="130" height="10" rx="5" fill="#1e293b"/>
-  <rect x="360" y="142" width="70" height="10" rx="5" fill="url(#primaryGrad)"/>
+  <text x="320" y="135" fill="#64748b" font-family="system-ui" font-size="9">Long</text>
+  <rect x="360" y="128" width="130" height="8" rx="4" fill="#1e293b"/>
+  <rect x="360" y="128" width="100" height="8" rx="4" fill="url(#primary)"/>
   
   <!-- Tool Tracker (Right) -->
-  <rect x="580" y="200" width="140" height="120" rx="10" fill="#1e293b" stroke="url(#orangeGrad)" stroke-width="2"/>
-  <text x="650" y="230" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🔧 Tools</text>
-  <text x="650" y="250" text-anchor="middle" fill="#f59e0b" font-family="Arial, sans-serif" font-size="10">Tool Tracker</text>
+  <rect x="610" y="200" width="130" height="100" rx="10" fill="#1a1a2e" stroke="url(#orange)" stroke-width="2"/>
+  <text x="675" y="230" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="500">🔧 Tools</text>
   
-  <!-- Tool call items -->
-  <circle cx="595" cy="270" r="5" fill="#10b981"/>
-  <text x="605" y="274" fill="#64748b" font-family="Arial, sans-serif" font-size="9">search... ✓</text>
+  <circle cx="630" cy="255" r="4" fill="#10b981"/>
+  <text x="642" y="258" fill="#94a3b8" font-family="system-ui" font-size="9">search ✓</text>
   
-  <circle cx="595" cy="290" r="5" fill="#10b981"/>
-  <text x="605" y="294" fill="#64748b" font-family="Arial, sans-serif" font-size="9">read... ✓</text>
+  <circle cx="630" cy="272" r="4" fill="#10b981"/>
+  <text x="642" y="275" fill="#94a3b8" font-family="system-ui" font-size="9">read ✓</text>
   
-  <circle cx="595" cy="310" r="5" fill="#ef4444"/>
-  <text x="605" y="314" fill="#64748b" font-family="Arial, sans-serif" font-size="9">exec... ✗</text>
+  <circle cx="630" y="289" r="4" fill="#ef4444"/>
+  <text x="642" y="292" fill="#94a3b8" font-family="system-ui" font-size="9">exec ✗</text>
   
-  <!-- Performance Monitor (Bottom) -->
-  <rect x="300" y="420" width="200" height="120" rx="10" fill="#1e293b" stroke="url(#primaryGrad)" stroke-width="2"/>
-  <text x="400" y="455" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">⚡ Performance</text>
-  <text x="400" y="475" text-anchor="middle" fill="#06b6d4" font-family="Arial, sans-serif" font-size="10">Performance Monitor</text>
+  <!-- Performance (Bottom) -->
+  <rect x="300" y="400" width="200" height="70" rx="10" fill="#1a1a2e" stroke="url(#primary)" stroke-width="2"/>
+  <text x="400" y="425" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="500">⚡ Performance</text>
   
-  <!-- Metrics grid -->
-  <rect x="320" y="490" width="70" height="35" rx="5" fill="#0f172a"/>
-  <text x="355" y="510" text-anchor="middle" fill="#06b6d4" font-family="Arial, sans-serif" font-size="16" font-weight="bold">245ms</text>
-  <text x="355" y="522" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="8">Latency</text>
+  <rect x="320" y="440" width="60" height="25" rx="5" fill="#0f172a"/>
+  <text x="350" y="456" text-anchor="middle" fill="#06b6d4" font-family="system-ui" font-size="14" font-weight="600">245ms</text>
   
-  <rect x="410" y="490" width="70" height="35" rx="5" fill="#0f172a"/>
-  <text x="445" y="510" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="16" font-weight="bold">12.4K</text>
-  <text x="445" y="522" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="8">Tokens</text>
+  <rect x="400" y="440" width="60" height="25" rx="5" fill="#0f172a"/>
+  <text x="430" y="456" text-anchor="middle" fill="#10b981" font-family="system-ui" font-size="14" font-weight="600">12K</text>
   
   <!-- Web UI (Top Right) -->
-  <rect x="580" y="60" width="150" height="100" rx="10" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
-  <text x="655" y="90" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">🌐 Web UI</text>
+  <rect x="580" y="60" width="140" height="80" rx="10" fill="#1a1a2e" stroke="#475569" stroke-width="1"/>
+  <text x="650" y="88" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="12" font-weight="500">🌐 Web UI</text>
   
-  <!-- Mini UI preview -->
-  <rect x="595" y="100" width="120" height="50" rx="5" fill="#1e293b"/>
-  <rect x="600" y="105" width="40" height="8" rx="2" fill="url(#purpleGrad)" opacity="0.6"/>
-  <rect x="600" y="118" width="100" height="6" rx="2" fill="#64748b" opacity="0.3"/>
-  <rect x="600" y="130" width="80" height="6" rx="2" fill="#64748b" opacity="0.3"/>
-  
-  <!-- Arrow to inspector -->
-  <path d="M655 160 L655 200" stroke="#64748b" stroke-width="2" fill="none"/>
-  <polygon points="650,195 660,195 655,205" fill="#64748b"/>
-  
-  <!-- Event Stream -->
-  <rect x="80" y="420" width="150" height="100" rx="10" fill="#1e293b"/>
-  <text x="155" y="450" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">📡 Events</text>
-  <text x="155" y="470" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="9">Real-time Updates</text>
-  
-  <!-- Event stream dots -->
-  <circle cx="100" cy="490" r="4" fill="#10b981"/>
-  <circle cx="115" cy="490" r="4" fill="#06b6d4"/>
-  <circle cx="130" cy="490" r="4" fill="#a855f7"/>
-  <circle cx="145" cy="490" r="4" fill="#f59e0b"/>
-  <circle cx="160" cy="490" r="4" fill="#ef4444"/>
-  <circle cx="175" cy="490" r="4" fill="#10b981"/>
-  <circle cx="190" cy="490" r="4" fill="#06b6d4"/>
-  <circle cx="205" cy="490" r="4" fill="#a855f7"/>
-  
-  <!-- Arrow to inspector -->
-  <path d="M200 420 L300 300" stroke="#64748b" stroke-width="2" fill="none"/>
+  <rect x="595" y="100" width="110" height="30" rx="5" fill="#0f172a"/>
+  <rect x="600" y="105" width="50" height="6" rx="2" fill="url(#purple)" opacity="0.6"/>
+  <rect x="600" y="116" width="90" height="4" rx="2" fill="#334155" opacity="0.5"/>
+  <rect x="600" y="125" width="70" height="4" rx="2" fill="#334155" opacity="0.5"/>
   
   <!-- Export (Bottom Right) -->
-  <rect x="580" y="420" width="150" height="100" rx="10" fill="#1e293b"/>
-  <text x="655" y="450" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">📦 Export</text>
-  <text x="655" y="470" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="9">JSON / Reports</text>
+  <rect x="580" y="400" width="140" height="70" rx="10" fill="#1a1a2e" stroke="#475569" stroke-width="1"/>
+  <text x="650" y="425" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="12" font-weight="500">📦 Export</text>
   
-  <rect x="600" y="480" width="110" height="25" rx="5" fill="url(#greenGrad)" opacity="0.2"/>
-  <text x="655" y="497" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="10">Export Report</text>
+  <rect x="600" y="440" width="100" height="22" rx="5" fill="url(#green)" opacity="0.2"/>
+  <text x="650" y="455" text-anchor="middle" fill="#10b981" font-family="system-ui" font-size="10">Export Report</text>
   
-  <!-- Arrow to inspector -->
-  <path d="M580 470 L500 320" stroke="#64748b" stroke-width="2" fill="none"/>
+  <!-- Events (Bottom Left) -->
+  <rect x="60" y="400" width="140" height="70" rx="10" fill="#1a1a2e" stroke="#475569" stroke-width="1"/>
+  <text x="130" y="425" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="12" font-weight="500">📡 Events</text>
   
-  <!-- Bottom label -->
-  <text x="400" y="570" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="12">Like Chrome DevTools for AI Agents</text>
+  <g fill="#06b6d4" opacity="0.8">
+    <circle cx="80" cy="450" r="4"/>
+    <circle cx="95" cy="450" r="4"/>
+    <circle cx="110" cy="450" r="4"/>
+    <circle cx="125" cy="450" r="4"/>
+    <circle cx="140" cy="450" r="4"/>
+    <circle cx="155" cy="450" r="4"/>
+    <circle cx="170" cy="450" r="4"/>
+  </g>
+  
+  <!-- Footer -->
+  <text x="400" y="490" text-anchor="middle" fill="#475569" font-family="system-ui" font-size="12">Like Chrome DevTools for AI Agents</text>
 </svg>

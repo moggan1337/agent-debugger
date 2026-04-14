@@ -1,144 +1,76 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
-    <!-- Gradients -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a"/>
-      <stop offset="100%" stop-color="#1e293b"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#12121a"/>
     </linearGradient>
-    
-    <linearGradient id="magGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="glass" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#06b6d4"/>
       <stop offset="50%" stop-color="#3b82f6"/>
       <stop offset="100%" stop-color="#8b5cf6"/>
     </linearGradient>
-    
-    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="handle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="brain" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#10b981"/>
       <stop offset="100%" stop-color="#06b6d4"/>
     </linearGradient>
-    
-    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f59e0b"/>
-      <stop offset="100%" stop-color="#ef4444"/>
-    </linearGradient>
-    
-    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#a855f7"/>
-      <stop offset="100%" stop-color="#6366f1"/>
-    </linearGradient>
-    
-    <!-- Glow filters -->
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    
-    <filter id="innerGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
   
-  <!-- Background -->
-  <rect width="512" height="512" fill="url(#bgGrad)" rx="32"/>
-  
-  <!-- Grid pattern background -->
-  <g opacity="0.1">
-    <line x1="0" y1="100" x2="512" y2="100" stroke="#64748b" stroke-width="0.5"/>
-    <line x1="0" y1="200" x2="512" y2="200" stroke="#64748b" stroke-width="0.5"/>
-    <line x1="0" y1="300" x2="512" y2="300" stroke="#64748b" stroke-width="0.5"/>
-    <line x1="0" y1="400" x2="512" y2="400" stroke="#64748b" stroke-width="0.5"/>
-    <line x1="100" y1="0" x2="100" y2="512" stroke="#64748b" stroke-width="0.5"/>
-    <line x1="200" y1="0" x2="200" y2="512" stroke="#64748b" stroke-width="0.5"/>
-    <line x1="300" y1="0" x2="300" y2="512" stroke="#64748b" stroke-width="0.5"/>
-    <line x1="400" y1="0" x2="400" y2="512" stroke="#64748b" stroke-width="0.5"/>
-  </g>
+  <rect width="512" height="512" fill="url(#bg)" rx="24"/>
   
   <!-- Magnifying glass -->
-  <g transform="translate(256, 210)">
-    <!-- Glass circle -->
-    <circle cx="0" cy="0" r="90" fill="none" stroke="url(#magGrad)" stroke-width="8" filter="url(#glow)"/>
-    <circle cx="0" cy="0" r="82" fill="#0f172a" opacity="0.8"/>
-    <circle cx="0" cy="0" r="75" fill="none" stroke="url(#magGrad)" stroke-width="2" opacity="0.3"/>
-    
-    <!-- Brain circuit pattern inside -->
-    <g opacity="0.6">
-      <!-- Neural paths -->
-      <path d="M-40,-20 Q0,-40 40,-20" fill="none" stroke="url(#purpleGrad)" stroke-width="2"/>
-      <path d="M-40,0 Q0,20 40,0" fill="none" stroke="url(#greenGrad)" stroke-width="2"/>
-      <path d="M-30,-30 Q0,0 30,30" fill="none" stroke="url(#orangeGrad)" stroke-width="1.5"/>
-      <path d="M30,-30 Q0,0 -30,30" fill="none" stroke="#06b6d4" stroke-width="1.5"/>
-      
-      <!-- Neural nodes -->
-      <circle cx="-40" cy="-20" r="8" fill="url(#purpleGrad)"/>
-      <circle cx="40" cy="-20" r="8" fill="url(#purpleGrad)"/>
-      <circle cx="-40" cy="20" r="6" fill="url(#greenGrad)"/>
-      <circle cx="40" cy="20" r="6" fill="url(#greenGrad)"/>
-      <circle cx="0" cy="0" r="10" fill="url(#magGrad)" filter="url(#innerGlow)"/>
-      <circle cx="0" cy="0" r="6" fill="#0f172a"/>
-      <circle cx="0" cy="0" r="4" fill="url(#magGrad)"/>
-      
-      <!-- Side connections -->
-      <circle cx="-55" cy="0" r="5" fill="url(#orangeGrad)"/>
-      <circle cx="55" cy="0" r="5" fill="url(#orangeGrad)"/>
-      <line x1="-55" y1="0" x2="-40" y2="-20" stroke="url(#orangeGrad)" stroke-width="1.5"/>
-      <line x1="55" y1="0" x2="40" y2="-20" stroke="url(#orangeGrad)" stroke-width="1.5"/>
-      <line x1="-55" y1="0" x2="-40" y2="20" stroke="url(#orangeGrad)" stroke-width="1.5"/>
-      <line x1="55" y1="0" x2="40" y2="20" stroke="url(#orangeGrad)" stroke-width="1.5"/>
-    </g>
-    
+  <g filter="url(#glow)">
     <!-- Handle -->
-    <rect x="55" y="55" width="60" height="20" rx="10" fill="url(#magGrad)" transform="rotate(45 85 65)" filter="url(#glow)"/>
-    <rect x="60" y="60" width="50" height="10" rx="5" fill="#0f172a" transform="rotate(45 85 65)"/>
+    <rect x="290" y="270" width="70" height="22" rx="11" fill="url(#handle)" transform="rotate(45 325 281)"/>
   </g>
   
-  <!-- Floating elements -->
-  <!-- Thought bubbles -->
-  <circle cx="80" cy="100" r="15" fill="url(#greenGrad)" opacity="0.7" filter="url(#innerGlow)"/>
-  <circle cx="60" cy="70" r="8" fill="url(#greenGrad)" opacity="0.5"/>
-  <circle cx="95" cy="60" r="6" fill="url(#greenGrad)" opacity="0.4"/>
+  <!-- Glass circle -->
+  <circle cx="220" cy="210" r="100" fill="none" stroke="url(#glass)" stroke-width="8"/>
+  <circle cx="220" cy="210" r="92" fill="#0a0a0f"/>
+  <circle cx="220" cy="210" r="85" fill="none" stroke="url(#glass)" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Brain pattern inside -->
+  <g fill="none" stroke="url(#brain)" stroke-width="3" stroke-linecap="round">
+    <!-- Neural connections -->
+    <path d="M160 190 Q180 170 200 190 Q220 210 240 190"/>
+    <path d="M170 210 Q200 190 230 210"/>
+    <path d="M180 230 Q200 250 220 230 Q240 210 260 230"/>
+    <path d="M200 180 V230"/>
+  </g>
+  
+  <!-- Neural nodes -->
+  <g fill="url(#brain)">
+    <circle cx="160" cy="190" r="8"/>
+    <circle cx="200" cy="190" r="8"/>
+    <circle cx="240" cy="190" r="8"/>
+    <circle cx="170" cy="210" r="6"/>
+    <circle cx="220" cy="210" r="12" filter="url(#glow)"/>
+    <circle cx="230" cy="210" r="6"/>
+    <circle cx="180" cy="230" r="6"/>
+    <circle cx="220" cy="230" r="6"/>
+    <circle cx="260" cy="230" r="6"/>
+  </g>
+  
+  <!-- Floating debug elements -->
+  <g fill="url(#glass)" opacity="0.7">
+    <circle cx="100" cy="100" r="6"/>
+    <circle cx="400" cy="120" r="5"/>
+    <circle cx="420" cy="350" r="7"/>
+    <circle cx="80" cy="380" r="5"/>
+  </g>
   
   <!-- Code brackets -->
-  <text x="420" cy="80" font-family="monospace" font-size="40" fill="url(#purpleGrad)" opacity="0.6">{</text>
-  <text x="440" y="130" font-family="monospace" font-size="40" fill="url(#purpleGrad)" opacity="0.6">}</text>
-  
-  <!-- Metrics bars -->
-  <g transform="translate(400, 320)">
-    <rect x="0" y="0" width="60" height="8" rx="4" fill="#1e293b"/>
-    <rect x="0" y="0" width="45" height="8" rx="4" fill="url(#greenGrad)"/>
-    <rect x="0" y="15" width="60" height="8" rx="4" fill="#1e293b"/>
-    <rect x="0" y="15" width="30" height="8" rx="4" fill="url(#magGrad)"/>
-    <rect x="0" y="30" width="60" height="8" rx="4" fill="#1e293b"/>
-    <rect x="0" y="30" width="50" height="8" rx="4" fill="url(#orangeGrad)"/>
-    <rect x="0" y="45" width="60" height="8" rx="4" fill="#1e293b"/>
-    <rect x="0" y="45" width="40" height="8" rx="4" fill="url(#purpleGrad)"/>
-  </g>
-  
-  <!-- Play/Debug button -->
-  <circle cx="100" cy="380" r="25" fill="url(#magGrad)" filter="url(#glow)"/>
-  <circle cx="100" cy="380" r="20" fill="#0f172a"/>
-  <circle cx="100" cy="380" r="15" fill="url(#magGrad)"/>
-  <polygon points="95,372 95,388 110,380" fill="#0f172a"/>
-  
-  <!-- Signal waves -->
-  <path d="M140 380 Q150 370 160 380 Q170 390 180 380" fill="none" stroke="url(#greenGrad)" stroke-width="2" opacity="0.6"/>
-  <path d="M185 380 Q195 365 205 380 Q215 395 225 380" fill="none" stroke="url(#greenGrad)" stroke-width="2" opacity="0.4"/>
-  
-  <!-- Clock/time indicator -->
-  <circle cx="256" cy="420" r="20" fill="none" stroke="url(#orangeGrad)" stroke-width="3"/>
-  <line x1="256" y1="420" x2="256" y2="408" stroke="url(#orangeGrad)" stroke-width="3" stroke-linecap="round"/>
-  <line x1="256" y1="420" x2="266" y2="425" stroke="url(#orangeGrad)" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="256" cy="420" r="3" fill="url(#orangeGrad)"/>
+  <text x="90" y="90" font-family="monospace" font-size="36" fill="url(#glass)" opacity="0.4">{</text>
+  <text x="115" y="140" font-family="monospace" font-size="36" fill="url(#glass)" opacity="0.4">}</text>
   
   <!-- Title -->
-  <text x="256" y="480" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="26" font-weight="bold">AGENT DEBUGGER</text>
-  
-  <!-- Subtitle -->
-  <text x="256" y="500" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="11" letter-spacing="2">SEE INSIDE YOUR AGENT</text>
+  <text x="256" y="450" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600">AGENT DEBUGGER</text>
+  <text x="256" y="478" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="11" letter-spacing="3">SEE INSIDE YOUR AGENT</text>
 </svg>
