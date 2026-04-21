@@ -1,4 +1,24 @@
 # Agent Debugger
+## 🎬 Demo
+![Agent Debugger Demo](demo.gif)
+
+*Watch your agent's reasoning unfold step by step*
+
+## Screenshots
+| Component | Preview |
+|-----------|---------|
+| Agent Tree View | ![tree](screenshots/tree-view.png) |
+| Tool Call Graph | ![graph](screenshots/tool-graph.png) |
+| Message Timeline | ![timeline](screenshots/timeline.png) |
+
+## Visual Description
+The debugger presents agent cognition as an interactive tree with expandable nodes showing thoughts, decisions, and tool calls. The tool call graph visualizes dependencies between operations. Timeline shows message exchanges with latency and token usage breakdown.
+
+---
+
+
+
+[![CI](https://github.com/moggan1337/agent-debugger/actions/workflows/ci.yml/badge.svg)](https://github.com/moggan1337/agent-debugger/actions/workflows/ci.yml)
 
 <p align="center">
   <img src="public/logo.svg" alt="Agent Debugger" width="400"/>
